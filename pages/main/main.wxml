@@ -1,0 +1,6 @@
+<!--pages/main/main.wxml-->
+<view class='main-view'>
+  <block wx:for="{{postList}}">
+    <postItem name="postItem" item-data="{{item}}" />
+  </block>
+</view>

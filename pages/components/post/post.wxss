@@ -1,0 +1,25 @@
+.post-item{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30rpx;
+  margin-bottom: 20rpx;
+}
+.post-name{
+  width: 20%;
+  font-size: 30rpx;
+}
+.post-main{
+  width: 75%;
+  font-size: 27rpx;
+}
+.post-main image{
+  width: 100%;
+  max-height: 400rpx; 
+}
+.post-op{
+  font-size: 25rpx;
+  color: #999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

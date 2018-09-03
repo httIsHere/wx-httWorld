@@ -1,0 +1,18 @@
+<wxs module="dateFr" src="../../filter/filter.wxs" />
+<view class="post-item">
+  <view class='post-name'>{{itemData.posterName}}</view>
+  <view class='post-main'>
+    <text>{{itemData.postMsg}}</text>
+    <block wx:for="{{itemData.resources}}">
+      <image mode="scaleToFill" src='{{item}}' />
+    </block>
+    <view class='post-op'>
+      <text>{{dateFr.getFullDate(itemData.date)}}</text>
+      <view>
+        <block><i-icon type="like" size="20" color="#80848f" /> {{itemData.like}}</block>
+        <block><i-icon type="interactive" size="20" color="#80848f" /> {{itemData.like}}</block>
+      </view>
+    </view>
+  </view>
+</view>
+<slot></slot>

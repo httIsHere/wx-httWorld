@@ -9,3 +9,9 @@
   padding: 200rpx 0;
   box-sizing: border-box;
 } 
+.Card{
+  border: 1px solid #f0f0f0;
+  padding: 10rpx;
+  border-radius: 10rpx;
+  box-shadow: 5rpx 5rpx 20rpx rgba(0, 0, 0, .08);
+}

@@ -1,0 +1,35 @@
+/* pages/home/home.wxss */
+.my-head>view{
+  /* display: flex;
+  justify-content: flex-start;
+  align-items: center; */
+  padding: 0 50rpx;
+}
+.my-head image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  margin-right: 20rpx;
+  display: block;
+  margin: 0 auto;
+}
+.my-head text{
+  font-size: 30rpx;
+  display: block;
+  text-align: center;
+}
+.my-content>view{
+  padding: 50rpx;
+}
+.default-bar{
+  background: #eee;
+  height: 20rpx;
+  margin-bottom: 10rpx;
+}
+.short-bar{
+  width: 100rpx;
+}
+.long-bar{
+  width: 300rpx;
+}

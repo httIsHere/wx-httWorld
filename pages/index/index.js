@@ -4,20 +4,15 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
+    motto: 'start',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
-  },
   bindViewTap2: function () {
-    wx.navigateTo({
-      url: '../toast/toast'
+    wx.switchTab({
+      url: '../main/main',
     })
   },
   onLoad: function () {

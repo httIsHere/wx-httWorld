@@ -1,0 +1,22 @@
+<!--pages/add/add.wxml-->
+<view class='post-add'>
+  <form bindsubmit="submitMsg">
+    <view class='submit-msg'>
+      <button form-type='submit' style='color:{{enableSubmit?"#19be6b":"#999"}}'>发布</button>
+    </view>
+    <textarea class='my-textarea' placeholder='分享主子新鲜事' bindinput="inputMsg" maxlength="200" value='{{mag}}' name="textarea">
+      <text id='words-limit' style='color: {{wordsNumColor}}'>{{currentWords}}/{{maxWords}}</text>
+    </textarea>
+    <view class='post-image'>
+      <view class='show-image' wx:if="{{resources.length>0}}">
+        <image src='{{resources[0]}}' />
+        <view class='delete-image' bindtap='deleteImage'>
+          <i-icon type="close" size='20' color='#fff' />
+        </view>
+      </view>
+      <view class='add-image' wx:else>
+        <i-icon type="add" size='40' color='#999' bindtap='chooseImage' />
+      </view>
+    </view>
+  </form>
+</view>

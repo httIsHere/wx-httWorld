@@ -1,0 +1,16 @@
+var dateFormat = {
+  getFullDate: function(_date) {
+    _date = getDate(_date);
+    var dl = {
+      y: _date.getFullYear(),
+      m: (_date.getMonth() + 1) < 10 ? ('0' + (_date.getMonth() + 1)) : (_date.getMonth() + 1),
+      d: _date.getDate() < 10 ? ('0' + _date.getDate()) : _date.getDate(),
+      h: _date.getHours() < 10 ? ('0' + _date.getHours()) : _date.getHours(),
+      mm: _date.getMinutes() < 10 ? ('0' + _date.getMinutes()) : _date.getMinutes()
+    };
+    return dl.y + '-' + dl.m + '-' + dl.d + ' ' + dl.h + ':' + dl.mm;
+  }
+}
+module.exports = {
+  getFullDate: dateFormat.getFullDate
+}

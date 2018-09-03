@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "汪世界",
+  "usingComponents": {
+    "postItem": "../components/post/post"
+  },
+  "enablePullDownRefresh": true
+}
