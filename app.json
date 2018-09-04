@@ -1,9 +1,9 @@
 {
   "pages": [
-    "pages/timer/timer",
     "pages/main/main",
     "pages/add/add",
-    "pages/home/home"
+    "pages/home/home",
+    "pages/timer/timer"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -17,12 +17,6 @@
     "borderStyle": "black",
     "list": [
       {
-        "pagePath": "pages/home/home",
-        "text": "",
-        "iconPath": "assets/home.png",
-        "selectedIconPath": "assets/a-home.png"
-      },
-      {
         "pagePath": "pages/main/main",
         "text": "",
         "iconPath": "assets/main.png",
@@ -33,6 +27,12 @@
         "text": "",
         "iconPath": "assets/add.png",
         "selectedIconPath": "assets/a-add.png"
+      },
+      {
+        "pagePath": "pages/home/home",
+        "text": "",
+        "iconPath": "assets/home.png",
+        "selectedIconPath": "assets/a-home.png"
       }
     ]
   }

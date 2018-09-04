@@ -1,6 +1,8 @@
 {
   "usingComponents": {
-    "i-icon": "../components/dist/count-down/index",
-    "i-input-number": "../components/dist/input-number/index"
+    "i-icon": "../components/dist/icon/index",
+    "i-input-number": "../components/dist/input-number/index",
+    "i-toast": "../components/dist/toast/index",
+    "i-modal": "../components/dist/modal/index"
   }
 }

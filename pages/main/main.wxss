@@ -2,6 +2,9 @@
 /* 使用组件时需要引入组件样式文件 */
 @import "../components/post/post.wxss";
 
+.main-view{
+  margin-top: 50rpx;
+}
 .to-timer{
   position: fixed;
   right: 0;

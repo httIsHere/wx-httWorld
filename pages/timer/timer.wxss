@@ -6,6 +6,7 @@
   flex-direction: column;
   overflow: hidden;
   background-color: #fff;
+  transition: all .5s;
 }
 
 .timer_main {
@@ -15,9 +16,16 @@
   align-items: center;
   text-align: center;
   background-color: #ffdada;
-  transition: all 0.5s;
+  transition: all .5s;
   z-index: 1;
-  padding: 150rpx;
+  flex: 2;
+}
+
+.timer_logs{
+  position: absolute;
+  top: 10rpx;
+  left: 30rpx;
+  color: #ff6a6a;
 }
 
 .timer_wrapper {
@@ -48,7 +56,7 @@
   width: 150rpx;
   height: 300rpx;
   overflow: hidden;
-  transform: all 0.3s;
+  transition: all 0.3s;
 }
 
 .timer_left {
@@ -65,7 +73,7 @@
   width: 300rpx;
   height: 300rpx;
   border: 3px solid transparent;
-  transform: all 0.3s;
+  transition: all 0.3s;
   border-radius: 50%;
 }
 
@@ -79,7 +87,7 @@
 .timer_circle--right {
   right: 0;
   border-right: 3px solid #ff6a6a;
-  border-bottom: 3px solid #ff6a6a;
+  border-bottom: 3px solid rgb(255, 106, 106);
   transform: rotate(-45deg);
 }
 
@@ -107,6 +115,7 @@
   align-items: center;
   flex: 1;
   padding-top: 80rpx;
+  transition: all .5s;
 }
 .timer_ctrl{
   background: #ff9a9a;
@@ -124,4 +133,55 @@
   position: absolute;
   top: 0;
   right: 30rpx;
+}
+.timer_running .timer_main{
+  flex: 1;
+  transition: all .5s;
+}
+.timer_running .timer_ctrlSection{
+  flex: 0;
+  position: absolute;
+  bottom: 0;
+}
+.timer_running .timer_ctrlSection .timer_ctrl{
+  height: 0;
+}
+.complete-btn{
+  position: absolute;
+  bottom: 100rpx;
+  border: 1px dashed #fff;
+  height: 70rpx;
+  line-height: 70rpx;
+  border-radius: 35rpx;
+  padding: 0 50rpx;
+  color: #fff;
+  background: rgba(255, 106, 106, .2);
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  transition: all .3s;
+}
+.timer_showTaskName{
+  position: absolute;
+  top: 200rpx;
+  color: #ff9a9a;
+  font-size: 16px;
+  transition: all .3s;
+}
+.timer_running .timer_wrapper, .timer_running .timer_circle{
+  width: 400rpx;
+  height: 400rpx;
+}
+.timer_running .timer_progress{
+  width: 200rpx;
+  height: 400rpx;
+}
+.log_item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30rpx;
+}
+.i-modal-body{
+  max-height: 1000rpx;
 }

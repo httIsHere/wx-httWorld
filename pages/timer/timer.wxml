@@ -1,6 +1,7 @@
 <!--pages/timer/timer.wxml-->
-<view class='container timer'>
+<view class='container timer {{isRunning ? "timer_running" : ""}}'>
   <view class='timer_main'>
+    <text class='timer_logs' bindtap='showLogs'>记录</text>
     <view class='timer_wrapper'>
       <view class='timer_progress-mask'></view>
       <view class='timer_progress timer_left'>
@@ -9,16 +10,30 @@
       <view class='timer_progress timer_right'>
         <view class="timer_circle timer_circle--right" style="transform: rotate({{rightDeg}}deg);"></view>
       </view>
-      <text class='timer_time'>{{remainTime}}</text>
+      <text wx:if="{{!completed}}" class='timer_time'>{{remainTime}}</text>
+      <i-icon wx:if="{{completed}}" type="flag" size='80' color='#ff6a6a'/>
     </view>
-    <input type='text' class='timer_missionName' placeholder='任务名称'>{{missionName}}</input>
-    <input type='number' class='timer_missionTime' placeholder='自定义时间' min="1"> {{missionTime}}
+    <input type='text' class='timer_missionName' placeholder='任务名称' bindinput='changeMissionName' value='{{missionName}}'></input>
+    <input type='number' class='timer_missionTime' placeholder='自定义时间' min="1" max="999" bindinput='changeMissionTime' value='{{missionTime}}'>
       <text class='setTime_end'>分钟</text>
     </input>
+    <view wx:if="{{isRunning}}" class='complete-btn' bindtap='completeTask'>结束</view>
+    <text wx:if="{{isRunning}}" animation="{{nameAnimation}}" class='timer_showTaskName'>{{missionName+(completed?'完成':'进行中')}}</text>
   </view>
   <view class='timer_ctrlSection'>
-    <view class='timer_ctrl'>工作</view>
-    <view class='timer_ctrl'>休息</view>
-    <view wx:if="{{missionName}}" class='timer_ctrl'>{{missionName}}</view>
+    <view class='timer_ctrl' data-type="work" bindtap='startTimer'>工作</view>
+    <view class='timer_ctrl' data-type="rest" bindtap='startTimer'>休息</view>
+    <view wx:if="{{missionName}}" class='timer_ctrl' data-type="mission" bindtap='startTimer'>{{missionName}}</view>
   </view>
 </view>
+<i-toast id="toast" />
+<i-modal visible="{{showLogs}}" title="任务记录" bind:ok="handleClose" bind:cancel="handleClose">
+  <wxs module="dateFr" src="../filter/filter.wxs" />
+    <block wx:for="{{logs}}">
+      <view class='log_item'>
+        <text decode="{{true}}">{{dateFr.getFullDate(item.startTime)}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{item.taskName}}</text>
+        <i-icon wx:if="{{item.isCompleted}}" type="success" size='20' color='#19be6b'/>
+        <i-icon wx:else type="delete" size='20' color='#ff9a9a'/>
+      </view>
+    </block>
+</i-modal>

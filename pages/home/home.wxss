@@ -1,4 +1,7 @@
 /* pages/home/home.wxss */
+.home-view{
+  margin-top: 50rpx;
+}
 .my-head>view{
   /* display: flex;
   justify-content: flex-start;
