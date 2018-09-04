@@ -10,6 +10,21 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </view>
   </view>
+  <view class='my-func'>
+    <i-tab-bar current="0" bindchange="handleChange" class="my-func--tab">
+      <i-tab-bar-item key="messages" icon="barrage" title="动态"></i-tab-bar-item>
+      <i-tab-bar-item key="group" icon="coordinates" title="圈子"></i-tab-bar-item>
+      <!-- <i-tab-bar-item key="remind" icon="remind" current-icon="remind_fill" count="3" title="Notice"></i-tab-bar-item> -->
+      <i-tab-bar-item key="album" icon="camera" title="相册"></i-tab-bar-item>
+    </i-tab-bar>
+    <i-cell-group>
+      <i-cell title="主子信息" is-link url="/pages/home/subPages/petInfo/petInfo"></i-cell>
+      <i-cell title="主子任务" is-link url="/pages/timer/timer"></i-cell>
+      <i-cell title="相册私密">
+        <switch slot="footer" size="small" />
+      </i-cell>
+    </i-cell-group>
+  </view>
   <view class='my-content'>
     <view wx:if="{{!hasUserInfo}}" class='noContent'>
       <view class='default-bar short-bar'></view>
@@ -19,7 +34,7 @@
     </view>
     <view wx:else>
       <block wx:for="{{postList}}">
-        <postItem name="postItem" item-data="{{item}}" />
+        <postItem name="postItem" item-data="{{item}}" from="home" />
       </block>
     </view>
   </view>

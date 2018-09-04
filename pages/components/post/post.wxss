@@ -1,15 +1,15 @@
 .post-item{
-  display: flex;
-  justify-content: space-between;
+  /* display: flex;
+  justify-content: space-between; */
   padding: 0 30rpx;
-  margin-bottom: 20rpx;
+  margin-bottom: 40rpx;
 }
 .post-name{
-  width: 20%;
   font-size: 30rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
 }
 .post-main{
-  width: 75%;
   font-size: 27rpx;
 }
 .post-main image{

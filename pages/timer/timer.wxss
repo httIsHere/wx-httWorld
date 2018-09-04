@@ -53,7 +53,7 @@
 .timer_progress {
   position: absolute;
   top: 0;
-  width: 150rpx;
+  width: 152rpx;
   height: 300rpx;
   overflow: hidden;
   transition: all 0.3s;
@@ -173,7 +173,7 @@
   height: 400rpx;
 }
 .timer_running .timer_progress{
-  width: 200rpx;
+  width: 202rpx;
   height: 400rpx;
 }
 .log_item{

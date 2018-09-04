@@ -1,6 +1,6 @@
 <wxs module="dateFr" src="../../filter/filter.wxs" />
 <view class="post-item">
-  <view class='post-name'>{{itemData.posterName}}</view>
+  <view wx:if="{{from!=='home'}}" class='post-name'>{{itemData.posterName}}</view>
   <view class='post-main'>
     <text>{{itemData.postMsg}}</text>
     <block wx:for="{{itemData.resources}}">

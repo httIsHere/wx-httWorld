@@ -4,6 +4,6 @@
     <postItem name="postItem" item-data="{{item}}" />
   </block>
   <view class='to-timer' bindtap='toTimer'>
-    <i-icon type="clock" size='30' color='#fff' />
+    <i-icon type="time" size='30' color='#fff' />
   </view>
 </view>

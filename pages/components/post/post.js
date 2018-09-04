@@ -10,7 +10,8 @@ Component({
     "itemData": {
       type: Object,
       value: ""
-    }
+    },
+    "from": String
   },
 
   /**

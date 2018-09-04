@@ -36,3 +36,6 @@
 .long-bar{
   width: 300rpx;
 }
+.my-func--tab{
+  margin-bottom: 30rpx;
+}

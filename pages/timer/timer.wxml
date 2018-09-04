@@ -21,8 +21,8 @@
     <text wx:if="{{isRunning}}" animation="{{nameAnimation}}" class='timer_showTaskName'>{{missionName+(completed?'完成':'进行中')}}</text>
   </view>
   <view class='timer_ctrlSection'>
-    <view class='timer_ctrl' data-type="work" bindtap='startTimer'>工作</view>
-    <view class='timer_ctrl' data-type="rest" bindtap='startTimer'>休息</view>
+    <view class='timer_ctrl' data-type="work" bindtap='startTimer'>陪主子玩耍</view>
+    <view class='timer_ctrl' data-type="rest" bindtap='startTimer'>主子运动</view>
     <view wx:if="{{missionName}}" class='timer_ctrl' data-type="mission" bindtap='startTimer'>{{missionName}}</view>
   </view>
 </view>

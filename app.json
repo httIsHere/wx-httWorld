@@ -3,7 +3,8 @@
     "pages/main/main",
     "pages/add/add",
     "pages/home/home",
-    "pages/timer/timer"
+    "pages/timer/timer",
+    "pages/home/subPages/petInfo"
   ],
   "window": {
     "backgroundTextStyle": "light",

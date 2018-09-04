@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "汪世界",
+  "navigationBarTitleText": "社区",
   "usingComponents": {
     "postItem": "../components/post/post",
     "i-icon": "../components/dist/icon/index"

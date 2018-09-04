@@ -57,7 +57,7 @@ Page({
     let _taskName = '';
     let _isRunning = this.data.isRunning;
     if(_type !== 'mission') {
-      _taskName = _type === 'rest' ? '休息' : '工作';
+      _taskName = _type === 'rest' ? '主子运动' : '陪主子玩耍';
     } else {
       _taskName = this.data.missionName;
     }
@@ -146,7 +146,9 @@ Page({
     this.saveLog(log);
   },
   completeTask: function() {
-    this.stopTimer();
+    if (!this.data.completed) {
+      this.stopTimer();
+    }
     this.setData({
       isRunning: false,
       completed: false,
