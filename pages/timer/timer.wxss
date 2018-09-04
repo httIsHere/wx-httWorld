@@ -1,0 +1,127 @@
+/* pages/timer/timer.wxss */
+
+.container {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.timer_main {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #ffdada;
+  transition: all 0.5s;
+  z-index: 1;
+  padding: 150rpx;
+}
+
+.timer_wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300rpx;
+  height: 300rpx;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.timer_progress-mask {
+  border: 3px solid #ff6a6a;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.3;
+  border-radius: 50%;
+}
+
+.timer_progress {
+  position: absolute;
+  top: 0;
+  width: 150rpx;
+  height: 300rpx;
+  overflow: hidden;
+  transform: all 0.3s;
+}
+
+.timer_left {
+  left: 0;
+}
+
+.timer_right {
+  right: 0;
+}
+
+.timer_circle {
+  position: absolute;
+  top: 0;
+  width: 300rpx;
+  height: 300rpx;
+  border: 3px solid transparent;
+  transform: all 0.3s;
+  border-radius: 50%;
+}
+
+.timer_circle--left {
+  left: 0;
+  border-left: 3px solid #ff6a6a;
+  border-bottom: 3px solid #ff6a6a;
+  transform: rotate(45deg);
+}
+
+.timer_circle--right {
+  right: 0;
+  border-right: 3px solid #ff6a6a;
+  border-bottom: 3px solid #ff6a6a;
+  transform: rotate(-45deg);
+}
+
+.timer_time {
+  font-size: 45px;
+  color: #ff6a6a;
+  font-weight: lighter;
+  transition: font-size 0.3s;
+}
+.timer_missionName, .timer_missionTime{
+  display: block;
+  width: 100%;
+  position: absolute;
+  bottom: -80rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 1px solid #eee;
+}
+.timer_missionTime{
+  bottom: -160rpx;
+}
+.timer_ctrlSection{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  padding-top: 80rpx;
+}
+.timer_ctrl{
+  background: #ff9a9a;
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  margin: 0 20rpx;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.setTime_end{
+  position: absolute;
+  top: 0;
+  right: 30rpx;
+}

@@ -1,0 +1,24 @@
+<!--pages/timer/timer.wxml-->
+<view class='container timer'>
+  <view class='timer_main'>
+    <view class='timer_wrapper'>
+      <view class='timer_progress-mask'></view>
+      <view class='timer_progress timer_left'>
+        <view class="timer_circle timer_circle--left" style="transform: rotate({{leftDeg}}deg);"></view>
+      </view>
+      <view class='timer_progress timer_right'>
+        <view class="timer_circle timer_circle--right" style="transform: rotate({{rightDeg}}deg);"></view>
+      </view>
+      <text class='timer_time'>{{remainTime}}</text>
+    </view>
+    <input type='text' class='timer_missionName' placeholder='任务名称'>{{missionName}}</input>
+    <input type='number' class='timer_missionTime' placeholder='自定义时间' min="1"> {{missionTime}}
+      <text class='setTime_end'>分钟</text>
+    </input>
+  </view>
+  <view class='timer_ctrlSection'>
+    <view class='timer_ctrl'>工作</view>
+    <view class='timer_ctrl'>休息</view>
+    <view wx:if="{{missionName}}" class='timer_ctrl'>{{missionName}}</view>
+  </view>
+</view>

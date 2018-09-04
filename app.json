@@ -1,16 +1,16 @@
 {
-  "pages":[
-    "pages/home/home",
+  "pages": [
+    "pages/timer/timer",
     "pages/main/main",
-    "pages/add/add"
+    "pages/add/add",
+    "pages/home/home"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "htt world",
-    "navigationBarTextStyle":"black"
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffdada",
+    "navigationBarTextStyle": "black"
   },
-  "tabBar":{
+  "tabBar": {
     "backgroundColor": "#fff",
     "color": "#999",
     "selectedColor": "#333",

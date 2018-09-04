@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "i-icon": "../components/dist/count-down/index",
+    "i-input-number": "../components/dist/input-number/index"
+  }
+}

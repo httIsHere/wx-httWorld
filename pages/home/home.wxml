@@ -18,6 +18,9 @@
       <view class='default-bar long-bar'></view>
     </view>
     <view wx:else>
+      <block wx:for="{{postList}}">
+        <postItem name="postItem" item-data="{{item}}" />
+      </block>
     </view>
   </view>
 </view>

@@ -1,7 +1,8 @@
 {
   "navigationBarTitleText": "汪世界",
   "usingComponents": {
-    "postItem": "../components/post/post"
+    "postItem": "../components/post/post",
+    "i-icon": "../components/dist/icon/index"
   },
   "enablePullDownRefresh": true
 }

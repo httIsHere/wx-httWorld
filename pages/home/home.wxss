@@ -19,7 +19,7 @@
   display: block;
   text-align: center;
 }
-.my-content>view{
+.my-content>.noContent{
   padding: 50rpx;
 }
 .default-bar{
