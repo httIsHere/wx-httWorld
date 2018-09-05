@@ -76,7 +76,6 @@ Page({
     }); 
     BMap.weather({
       success: function(data) {
-        console.log(data);
         _this.setData({
           city: data.currentWeather[0].currentCity,
           temperature: data.currentWeather[0].temperature
