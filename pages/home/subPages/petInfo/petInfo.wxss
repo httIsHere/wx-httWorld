@@ -1,12 +1,15 @@
 /* pages/home/subPages/petInfo/petInfo.wxss */
 @import '../../../../template/petInfo_content/info_content.wxss';
-.list_title{
+
+.list_title {
   font-size: 35rpx;
 }
-.list_item{
+
+.list_item {
   padding: 15rpx 30rpx !important;
 }
-.add_pet{
+
+.add_pet {
   background: #ff9a9a;
   width: 70rpx;
   height: 70rpx;
@@ -19,18 +22,58 @@
   right: 20rpx;
 }
 
-.modal_main{
+.modal_main {
   width: 90% !important;
 }
 
+.modal_body {
+  max-height: 80% !important;
+  margin-top: -18px !important;
+}
 
+.add_form{
+  color: #999;
+  position: relative;
+}
+.add_panel{
+  height: 100%;
+  position: relative;
+}
 
+.form_item {
+  text-align: left;
+  padding: 7px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color:#495060;
+}
 
-
-
-
-
-
-
-
-//
+.picker_value, .form_item>.item_right {
+  flex: 1;
+  line-height: 1.6;
+  padding: 4px 0;
+  min-height: 22px;
+  height: auto;
+  font-size: 14px;
+  text-align: center;
+}
+.form_item--switch{
+  margin: 0 auto;
+}
+.form_btns{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.form_btns button{
+  flex: 1;
+  border: 0;
+  background: none;
+  position: static;
+  padding-top: 20rpx;
+}
+.form_ok{
+  color: #ff6a6a;
+}

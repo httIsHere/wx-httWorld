@@ -14,15 +14,40 @@
     <i-icon type="add" size='30' color='#fff' />
   </view>
   <view class='add_modal'>
-    <i-modal visible="{{true}}" bind:ok="handleClose1" bind:cancel="handleClose1" i-class-main="modal_main">
-      <view class='add_form'>
-        <i-panel title="基础用法">
-          <i-input value="{{ value1 }}" title="收货人" autofocus placeholder="名字" />
-          <i-input value="{{ value2 }}" type="number" title="联系电话" placeholder="请输入手机号" />
-          <i-input value="{{ value3 }}" type="textarea" title="详细地址" placeholder="请输入详细地址(最多50字)" maxlength="50" />
-          <i-input value="{{ value4 }}" title="用户信息" disabled />
+    <i-modal visible="{{isAdd}}" show-ok="{{modalBtn}}" show-cancel="{{modalBtn}}" i-class="modal_main" i-class-body="modal_body">
+      <form bindsubmit="addPetSubmit" class='add_form'>
+        <i-panel title="新主子来啦~" class="add_panel">
+          <i-input type="text" title="主子闺名" placeholder='请输入主子闺名' />
+          <i-input type="text" title="主子属性" placeholder='请输入主子属性（如：猫猫）' />
+          <i-input type="text" title="主子品种" placeholder='请输入主子品种（如：美短）' />
+          <picker bindchange="genderChange" value="{{genderIndex}}" range="{{genderList}}">
+            <view class="picker form_item">
+              <text class='picker_title'>主子性别</text>
+              <text class='picker_value'>{{genderList[genderIndex]}}</text>
+            </view>
+          </picker>
+          <picker mode="date" value="{{birthday}}" start="1900-01-01" end="nowDate" bindchange="birthdayChange">
+            <view class="picker form_item">
+              <text class='picker_title'>主子生日</text>
+              <text class='picker_value'>{{birthday}}</text>
+            </view>
+          </picker>
+          <i-input type="textarea" title="主子爱吃" placeholder='请输入主子爱吃的食物' maxlength='50' />
+          <i-input type="textarea" title="主子爱玩" placeholder='请输入主子爱玩的游戏' maxlength='50' />
+          <view class='form_item'>
+            <label>是否绝育</label>
+            <view class='item_right'>
+              <i-switch value="{{sterValue}}" slot="footer" bind:change="sterChange" i-class="form_item--switch"></i-switch>
+            </view>
+          </view>
+          <i-input type="number" title="生产次数" placeholder='主子生产次数' />
+          <i-input type="textarea" title="主子病史" placeholder='请输入主子的病史（如：肠胃炎）' maxlength='50' />
         </i-panel>
-      </view>
+        <view class='form_btns'>
+          <button class='form_cancel'>取消</button>
+          <button class='form_ok' formType="submit">添加</button>
+        </view>
+      </form>
     </i-modal>
   </view>
   <i-action-sheet visible="{{isDelete}}" actions="{{ actions2 }}" show-cancel bind:cancel="handleCancel2" bind:click="handleClickItem2" mask-closable="{{ false }}">

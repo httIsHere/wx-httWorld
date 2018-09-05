@@ -2,8 +2,14 @@
 /* 使用组件时需要引入组件样式文件 */
 @import "../components/post/post.wxss";
 
-.main-view{
-  margin-top: 50rpx;
+.head_bar{
+  margin-bottom: 40rpx;
+  padding: 0 30rpx 10rpx 30rpx;
+  font-size: 25rpx;
+  background: #ffdada;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .to-timer{
   position: fixed;

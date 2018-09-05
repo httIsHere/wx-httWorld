@@ -7,6 +7,7 @@
     "i-modal": "../../../components/dist/modal/index",
     "i-panel": "../../../components/dist/panel/index",
     "i-input": "../../../components/dist/input/index",
-    "i-action-sheet": "../../../components/dist/action-sheet/index"
+    "i-action-sheet": "../../../components/dist/action-sheet/index",
+    "i-switch": "../../../components/dist/switch/index"
   }
 }

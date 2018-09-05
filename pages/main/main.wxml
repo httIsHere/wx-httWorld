@@ -1,5 +1,9 @@
 <!--pages/main/main.wxml-->
 <view class='main-view'>
+  <view class='head_bar'>
+    <text>{{city}}</text>
+    <text>{{temperature}}</text>
+  </view>
   <block wx:for="{{postList}}">
     <postItem name="postItem" item-data="{{item}}" />
   </block>
