@@ -1,10 +1,10 @@
 {
   "pages": [
+    "pages/home/subPages/petInfo/petInfo",
     "pages/main/main",
     "pages/add/add",
     "pages/home/home",
-    "pages/timer/timer",
-    "pages/home/subPages/petInfo"
+    "pages/timer/timer"
   ],
   "window": {
     "backgroundTextStyle": "light",

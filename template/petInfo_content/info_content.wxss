@@ -1,0 +1,4 @@
+.info_main{
+  font-size: 32rpx;
+  color: #666;
+}

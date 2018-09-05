@@ -1,0 +1,11 @@
+<template name="info">
+  <view class='info_main'>
+    <view>性别：{{(gender===1)?'公':(gender===0?'母':'雌雄同体')}}</view>
+    <view>爱吃：{{likeFood}}</view>
+    <view>爱玩：{{likeGame}}</view>
+    <view>是否绝育：{{isSterilization?'是':'否'}}</view>
+    <view>是否有后代：{{hasOffspring?'是':'否'}}</view>
+    <view wx:if="{{hasOffspring}}">生产几次：{{birthNum}}</view>
+    <view>是否有疾病史：{{hasIllHis}}</view>
+  </view>
+</template>

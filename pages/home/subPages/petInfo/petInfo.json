@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "我的主子们",
+  "usingComponents": {
+    "i-collapse": "../../../components/dist/collapse/index",
+    "i-collapse-item": "../../../components/dist/collapse-item/index",
+    "i-icon": "../../../components/dist/icon/index",
+    "i-modal": "../../../components/dist/modal/index",
+    "i-panel": "../../../components/dist/panel/index",
+    "i-input": "../../../components/dist/input/index",
+    "i-action-sheet": "../../../components/dist/action-sheet/index"
+  }
+}

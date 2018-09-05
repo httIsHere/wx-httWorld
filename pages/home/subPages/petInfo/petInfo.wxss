@@ -1,0 +1,36 @@
+/* pages/home/subPages/petInfo/petInfo.wxss */
+@import '../../../../template/petInfo_content/info_content.wxss';
+.list_title{
+  font-size: 35rpx;
+}
+.list_item{
+  padding: 15rpx 30rpx !important;
+}
+.add_pet{
+  background: #ff9a9a;
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 80%;
+  right: 20rpx;
+}
+
+.modal_main{
+  width: 90% !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+//

@@ -35,7 +35,8 @@ Component({
         actionMode: {
             type: String,
             value: 'horizontal'
-        }
+        },
+        iClassMain: String
     },
 
     methods: {
