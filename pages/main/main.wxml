@@ -1,13 +1,22 @@
 <!--pages/main/main.wxml-->
-<view class='main-view'>
+<import src="../../template/card/card" />
+<scroll-view class='main-view'>
+  <view class='head_image'>
+    <image class='head_img' src='{{head_img}}'></image>
+    <text class='head_text'>它是你的过客，你是它的一生</text>
+  </view>
   <view class='head_bar'>
     <text>{{city}}</text>
     <text>{{temperature}}</text>
   </view>
-  <block wx:for="{{postList}}">
-    <postItem name="postItem" item-data="{{item}}" />
-  </block>
+  <view class='post_cards'>
+    <block wx:for="{{postList}}">
+      <view class='card_view' data-index="{{index}}" bindtap="toDetail">
+        <template is="card" data="{{...item}}" />
+      </view>
+    </block>
+  </view>
   <view class='to-timer' bindtap='toTimer'>
     <i-icon type="time" size='30' color='#fff' />
   </view>
-</view>
+</scroll-view>

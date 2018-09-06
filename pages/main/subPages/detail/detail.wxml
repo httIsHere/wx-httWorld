@@ -1,0 +1,22 @@
+<!--pages/main/subPages/detail/detail.wxml-->
+<scroll-view class='detail_view'>
+  <view class='head_image'>
+    <image class='head_img' src='{{resources.length>0?resources[1]:defaultImage}}' />
+    <view class='detail_back' bindtap='backPre'>
+      <image src='../../../../assets/back.svg'></image>
+    </view>
+  </view>
+  <view class='card_part'>
+    <view class='card_time'>
+      <text class='time_day'>{{day}}</text>
+      <text class='time_small'>{{month}} / {{year}}</text>
+    </view>
+    <view class='card_content'>
+      <text>{{postMsg}}</text>
+    </view>
+    <view class='card_from'>
+      <text>from: {{posterName}}</text>
+    </view>
+    <view class='card_operation'></view>
+  </view>
+</scroll-view>

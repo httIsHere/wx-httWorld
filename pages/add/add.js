@@ -1,13 +1,16 @@
 // pages/add/add.js
+const api = require('../../utils/api.js');
 var qiniuUploader = require('../../libs/qiniuUploader.js');
 const app = getApp();
 
 // 初始化七牛相关参数
 function initQiniu() {
   var options = {
-    region: 'NCN', // 华北区
-    uptokenURL: 'https://portal.qiniu.com/api/kodo/bucket/file/httishere-20180905/uptoken?ftype=0',
+    region: 'ECN', // 华北区
+    // uptokenURL: 'https://portal.qiniu.com/api/kodo/bucket/file/httishere-20180905/uptoken?ftype=0',
+    uptoken: 'zU_kTH7z75DQ8Zoom3ZFxXcI9bruTfDSBE6V6Pq6:-Ty5M3DnyrJS9sMCxGAFD_sXQJs=:eyJzY29wZSI6Imh0dGlzaGVyZS0yMDE4MDkwNSIsImRlYWRsaW5lIjoxNTM2MzAyNTg2fQ==',
     domain: 'http://pektftzre.bkt.clouddn.com',
+    // uploadFile: 'https://up-z0.qbox.me',
     shouldUseQiniuFileName: false
   };
   qiniuUploader.init(options);
@@ -22,7 +25,12 @@ Page({
     showPreview: false,
     enableSubmit: false,
     msg: "",
-    imageObject: {}
+    imageObject: {},
+    msg: ''
+  },
+  onLoad: function() {
+    initQiniu();
+    
   },
   //对输入字数的限制
   inputMsg: function(e) {
@@ -78,28 +86,107 @@ Page({
   },
   didPressChooesImage: function() {
     var that = this;
-    didPressChooesImage(that);
+    wx.getSetting({
+      success: res => {
+        if (res.authSetting['scope.userInfo']) {
+          didPressChooesImage(that);
+        }
+      }
+    })
   },
   didCancelTask: function() {
     this.data.cancelTask()
   },
   //发布短消息
   submitMsg: function(e) {
+    const that = this;
     if (this.data.enableSubmit) {
       var postDetail = {
-        posterId: 111,
+        posterOpenId: app.globalData.openId,
         posterName: app.globalData.userInfo.nickName,
         postMsg: e.detail.value.textarea,
-        resources: this.data.resources,
+        resources: that.data.resources,
         date: new Date().getTime(),
       }
       //先上传图片
+      if (that.data.resources.length > 0) {
+        var filePath = that.data.resources[0];
+        // 交给七牛上传
+        qiniuUploader.upload(filePath, (res) => {
+            that.setData({
+              'imageObject': res
+            });
+            postDetail.resources.push(res.imageURL);
+            //post message
+            wx.request({
+              url: api.postMessage,
+              method: 'post',
+              data: postDetail,
+              header: {
+                'content-type': 'application/json'
+              },
+              success: function(data) {
+                //发布回调
+                that.setData({
+                  currentWords: 0,
+                  maxWords: 200,
+                  wordsNumColor: '#999',
+                  resources: [],
+                  showPreview: false,
+                  enableSubmit: false,
+                  msg: "",
+                  imageObject: {},
+                  msg: ''
+                });
+                wx.switchTab({
+                  url: 'pages/main/main',
+                })
+              }
+            })
+          }, (error) => {
+            console.error('error: ' + JSON.stringify(error));
+          },
+          null,
+          (progress) => {
+            console.log('上传进度', progress.progress)
+            console.log('已经上传的数据长度', progress.totalBytesSent)
+            console.log('预期需要上传的数据总长度', progress.totalBytesExpectedToSend)
+          }, cancelTask => that.setData({
+            cancelTask
+          })
+        );
+      } else {
+        //仅submit文字
+        wx.request({
+          url: api.postMessage,
+          method: 'post',
+          data: postDetail,
+          header: {
+            'content-type': 'application/json'
+          },
+          success: function (data) {
+            that.setData({
+              currentWords: 0,
+              maxWords: 200,
+              wordsNumColor: '#999',
+              resources: [],
+              showPreview: false,
+              enableSubmit: false,
+              msg: "",
+              imageObject: {},
+              msg: ''
+            })
+            wx.switchTab({
+              url: 'pages/main/main',
+            })
+          }
+        })
+      }
     }
   }
 })
 
 function didPressChooesImage(that) {
-  initQiniu();
   // 微信 API 选文件
   wx.chooseImage({
     count: 1,

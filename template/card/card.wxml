@@ -1,0 +1,11 @@
+<template name="card">
+  <view class='card_item'>
+    <view class='content_box'>
+      <text>{{postMsg}}</text>
+      <image wx:if="{{resources[1]}}" src='{{resources[1]}}'></image>
+    </view>
+    <view class='name_box'>
+      <text>from: {{posterName}}</text>
+    </view>
+  </view>
+</template>

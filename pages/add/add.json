@@ -1,4 +1,5 @@
 {
+  
   "navigationBarTitleText": "主子新鲜事",
   "usingComponents": {
     "i-icon": "../components/dist/icon/index",

@@ -23,5 +23,6 @@ const formatDate = date => {
 
 module.exports = {
   formatTime: formatTime,
-  formatDate
+  formatDate,
+  formatNumber
 }

@@ -1,9 +1,12 @@
 <view class='post-add'>
-  <form bindsubmit="submitMsg">
+  <view class='head_bar'>
+    <text>主子新鲜事</text>
+  </view>
+  <form bindsubmit="submitMsg" class='add_mainSection'>
     <view class='submit-msg'>
       <button form-type='submit' style='color:{{enableSubmit?"#ff6a6a":"#999"}}'>发布</button>
     </view>
-    <textarea class='my-textarea' placeholder='分享主子新鲜事' bindinput="inputMsg" maxlength="200" value='{{mag}}' name="textarea">
+    <textarea class='my-textarea' placeholder='分享主子新鲜事' bindinput="inputMsg" maxlength="200" value='{{msg}}' name="textarea">
       <text id='words-limit' style='color: {{wordsNumColor}}'>{{currentWords}}/{{maxWords}}</text>
     </textarea>
     <view class='post-image'>
@@ -14,7 +17,7 @@
         </view>
       </view>
       <view class='add-image' wx:else>
-        <i-icon type="add" size='40' color='#999' bindtap='didPressChooesImage' />
+        <i-icon type="add" size='40' color='#999' bindtap='chooseImage' />
       </view>
     </view>
   </form>

@@ -2,71 +2,16 @@
 const common = require('../../libs/common.js');
 var bmap = require('../../libs/bmap-wx.js');
 var BMap;
+const api = require('../../utils/api.js');
+
+const app = getApp();
 
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-    postList: [{
-        posterId: 121212,
-        posterName: '汪里个汪',
-        postMsg: "在页面上使用该模板，通过is判断使用哪个模板,这里我们使用name为courseStudent模板（此处使用的是列表循环，所以data值为item）；",
-        resources: [
-          'https://developers.weixin.qq.com/miniprogram/dev/image/tabbar.png?t=18082922'
-        ],
-        date: new Date().getTime(),
-        like: 123,
-        comments: []
-      },
-      {
-        posterId: 121212,
-        posterName: '汪里个汪',
-        postMsg: "在页面上使用该模板，通过is判断使用哪个模板,这里我们使用name为courseStudent模板（此处使用的是列表循环，所以data值为item）；",
-        resources: [
-          'https://developers.weixin.qq.com/miniprogram/dev/image/tabbar.png?t=18082922'
-        ],
-        date: new Date().getTime(),
-        like: 123,
-        comments: []
-      },
-      {
-        posterId: 121212,
-        posterName: '汪里个汪',
-        postMsg: "在页面上使用该模板，通过is判断使用哪个模板,这里我们使用name为courseStudent模板（此处使用的是列表循环，所以data值为item）；",
-        resources: [
-          'https://developers.weixin.qq.com/miniprogram/dev/image/tabbar.png?t=18082922'
-        ],
-        date: new Date().getTime(),
-        like: 123,
-        comments: []
-      },
-      {
-        posterId: 121212,
-        posterName: '汪里个汪',
-        postMsg: "在页面上使用该模板，通过is判断使用哪个模板,这里我们使用name为courseStudent模板（此处使用的是列表循环，所以data值为item）；",
-        resources: [
-          'https://developers.weixin.qq.com/miniprogram/dev/image/tabbar.png?t=18082922'
-        ],
-        date: new Date().getTime(),
-        like: 123,
-        comments: []
-      },
-      {
-        posterId: 121212,
-        posterName: '汪里个汪',
-        postMsg: "在页面上使用该模板，通过is判断使用哪个模板,这里我们使用name为courseStudent模板（此处使用的是列表循环，所以data值为item）；",
-        resources: [
-          'https://developers.weixin.qq.com/miniprogram/dev/image/tabbar.png?t=18082922'
-        ],
-        date: new Date().getTime(),
-        like: 123,
-        comments: []
-      },
-    ],
+    postList: [],
     temperature: '',
-    city: ''
+    city: '',
+    head_img: ''
   },
 
   onLoad: function() {
@@ -82,11 +27,40 @@ Page({
         })
       }
     }); 
+    wx.request({
+      url: api.getAllMsg,
+      success: function(data) {
+        _this.setData({
+          postList: data.data
+        });
+      }
+    })
+  },
+  //下拉刷新
+  onPullDownRefresh: function() {
+    const _this = this;
+    wx.stopPullDownRefresh();
+    wx.request({
+      url: api.getAllMsg,
+      success: function (data) {
+        console.log(data.data)
+        _this.setData({
+          postList: data.data
+        });
+      }
+    })
   },
 
   toTimer: function() {
     wx.navigateTo({
       url: '../timer/timer',
+    })
+  },
+  toDetail: function(e) {
+    let index = e.currentTarget.dataset.index;
+    // app.globalData.currentMsg = this.data.postList[index]._id;
+    wx.navigateTo({
+      url: './subPages/detail/detail?id=' + this.data.postList[index]._id
     })
   }
 })
